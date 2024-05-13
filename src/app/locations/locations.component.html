@@ -1,0 +1,5 @@
+<mgl-marker
+  *ngFor="let location of locations"
+  [lngLat]="[location.longitude, location.latitude]"
+  (click)="buttonClick()"
+></mgl-marker>

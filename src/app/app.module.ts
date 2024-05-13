@@ -3,14 +3,18 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgxMapLibreGLModule } from '@maplibre/ngx-maplibre-gl';
 
 import { AppComponent } from './app.component';
+import { LocationsComponent } from './locations/locations.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LocationsComponent
   ],
   imports: [
     BrowserModule,
-    NgxMapLibreGLModule
+    NgxMapLibreGLModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
