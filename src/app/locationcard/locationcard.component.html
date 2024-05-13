@@ -1,0 +1,8 @@
+<div class="overflow-auto h-screen">
+  <div *ngFor="let location of locations">
+    <a href="#" class="mt-2 ml-2 mr-2 block max-w-sm p-3 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+      <h5 class="mb-1 text-xl font-bold tracking-tight text-gray-900 dark:text-white">{{location.nimi}}</h5>
+      <p class="text-gray-500 dark:text-gray-300">{{location.osoite}}, {{location.postinumero}} {{location.kaupunki}}</p>
+    </a>
+  </div>
+</div>

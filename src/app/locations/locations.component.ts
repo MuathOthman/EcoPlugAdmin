@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import {FetchLocationsService} from "../services/fetch-locations.service";
 
 
 interface Location {
@@ -24,22 +25,17 @@ export class LocationsComponent implements OnInit {
   @Input() LngLat: number[] = [0, 0];
   locations:Location[] = [];
 
-  constructor(private http: HttpClient) { }
+  constructor(private fetchLocationsService: FetchLocationsService) { }
 
   ngOnInit(): void {
-    this.getLocations();
-    console.log("Trying to print" + this.locations);
+    this.fetchLocationsService.getLocations().subscribe((data: any) => {
+      this.locations = data;
+    });
   }
 
   buttonClick() {
     console.log("Button clicked");
     console.log(this.locations);
-  }
-
-  getLocations() {
-    this.http.get<Location[]>('http://localhost:3002/sijainnit/').subscribe((data: Location[]) => {
-      this.locations = data;
-    });
   }
 
 }
