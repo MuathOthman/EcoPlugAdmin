@@ -3,7 +3,13 @@ app-sidebar {
   height: 100vh;
 }
 
+app-specific-location {
+  margin-top: 10vh;
+  width: 30%;
+  height: 100vh;
+}
+
 mgl-map {
-  width: 80%;
+  width: 50%;
   height: 100vh;
 }

@@ -1,9 +1,11 @@
 <div class="flex overflow-y-hidden">
   <app-sidebar></app-sidebar>
+  <app-specific-location *ngIf="showSpecificLocation" [@slideInOut]></app-specific-location>
   <mgl-map
     [style]="'https://api.maptiler.com/maps/satellite/style.json?key=uH3D7r0mzpNXPYXcEjq1'"
     [zoom]="[10]"
     [center]="[24.8128, 60.2181]"
+    [ngStyle]="{ width: showSpecificLocation ? '50%' : '80%' }"
   >
     <mgl-control mglNavigation position="top-right"></mgl-control>
     <app-locations></app-locations>

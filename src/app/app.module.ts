@@ -8,6 +8,9 @@ import {HttpClientModule} from "@angular/common/http";
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
 import { LocationcardComponent } from './locationcard/locationcard.component';
+import { SpecificLocationComponent } from './specific-location/specific-location.component';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -15,12 +18,15 @@ import { LocationcardComponent } from './locationcard/locationcard.component';
     LocationsComponent,
     SidebarComponent,
     SearchbarComponent,
-    LocationcardComponent
+    LocationcardComponent,
+    SpecificLocationComponent
   ],
   imports: [
+    BrowserAnimationsModule,
     BrowserModule,
     NgxMapLibreGLModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
