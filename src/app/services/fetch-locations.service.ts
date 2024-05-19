@@ -10,6 +10,7 @@ interface Location {
   osoite: string;
   kaupunki: string;
   postinumero: string;
+  tila: string;
 }
 
 @Injectable({

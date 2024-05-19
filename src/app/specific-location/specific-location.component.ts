@@ -9,6 +9,7 @@ interface Location {
   osoite: string;
   kaupunki: string;
   postinumero: number;
+  tila: string;
 }
 
 @Component({
@@ -24,6 +25,8 @@ export class SpecificLocationComponent implements OnInit {
   osoite: string = '';
   kaupunki: string = '';
   postinumero: number = 0;
+  tila: string = '';
+  editmode: boolean = true;
 
   constructor(private mapService: MapLocationService) { }
 
@@ -36,7 +39,28 @@ export class SpecificLocationComponent implements OnInit {
       this.osoite = location.osoite;
       this.kaupunki = location.kaupunki;
       this.postinumero = location.postinumero;
+      this.tila = location.tila;
     });
   }
 
+  editLocation() {
+    console.log('editLocation');
+    this.editmode = !this.editmode;
+  }
+
+  saveLocation() {
+    console.log('saveLocation');
+    this.editmode = !this.editmode;
+    //this.mapService.updateLocation(this.sijainti_ID, this.latitude, this.longitude, this.nimi, this.osoite, this.kaupunki, this.postinumero, this.tila);
+  }
+
+  updateTila(){
+    console.log('updateTila');
+    if (this.tila === 'true') {
+      this.tila = 'false';
+    } else {
+      this.tila = 'true';
+    }
+    this.mapService.updateTila(this.sijainti_ID, this.tila);
+  }
 }
